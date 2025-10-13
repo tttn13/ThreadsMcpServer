@@ -1,0 +1,23 @@
+@baseUrl = https://threads-mcp-function-1-565241009495.europe-west1.run.app
+@contentType = application/json
+@accessToken = {{profile.response.body.token}}
+@threadsUrl = https://graph.threads.net/v1.0/
+@userId = {{profile.response.body.id}}
+GET {{baseUrl}}/login
+###
+# @name profile
+GET {{baseUrl}}/api/me
+###
+POST {{baseUrl}}/api/post?input=ABC TEST
+###
+POST {{threadsUrl}}{{userId}}/threads
+Content-Type: application/x-www-form-urlencoded
+
+media_type=TEXT&text=INPUT&access_token={{accessToken}}
+###
+POST {{baseUrl}}/api/post
+Content-Type: application/json
+
+{
+  "input": "ABC TEST"
+}
