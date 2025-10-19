@@ -58,7 +58,7 @@ public class AuthService
         var result = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
         var longToken = result?["access_token"]?.ToString();
         // FileCache.Set("long_token", longToken);
-        await _redis.SetAsync("long_token", longToken);
+        await _redis.SetAsync("long_token", longToken, TimeSpan.FromMinutes(10));
         return longToken;
     }
 

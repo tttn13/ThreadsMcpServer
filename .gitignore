@@ -46,6 +46,9 @@ packages/
 appsettings.Development.json
 appsettings.Local.json
 
+# Cache files
+threads_mcp_cache.json
+
 # OS
 .DS_Store
 Thumbs.db

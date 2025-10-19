@@ -3,8 +3,8 @@ using System.Text.Json;
 public class FileCache
 {
     private static readonly string CachePath = Path.Combine(
-        Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
-        ".threads_mcp_cache.json"
+        AppContext.BaseDirectory,
+        "threads_mcp_cache.json"
     );
 
     public static void Set(string key, string value)

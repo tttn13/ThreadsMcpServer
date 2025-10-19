@@ -21,3 +21,4 @@ docker push ${DOCKER_IMAGE}
 echo ""
 echo "✅ Build and push complete!"
 echo "🐳 Image: ${DOCKER_IMAGE}"
+
